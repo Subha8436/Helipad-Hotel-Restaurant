@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0B2545">
+
+    <!-- SEO & Metadata -->
+    <title>Helipad Hotel & Restaurant — Falakata | Book a Table & View Menu</title>
+    <meta name="description" content="Enjoy warm hospitality, curated cuisine, and comfortable stays at Helipad Hotel & Restaurant in Falakata. Book a table or explore our menu today. Call +91 98765 43210.">
+    <link rel="canonical" href="https://your-domain.com">
+    <meta property="og:title" content="Helipad Hotel & Restaurant — Falakata">
+    <meta property="og:description" content="Comfort · Cuisine · Convenience. Book a table or explore our menu today.">
+    <meta property="og:image" content="https://your-domain.com/assets/helipad-hero.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@HelipadFalakata">
+    <!-- End SEO -->
+
+    <!-- Fonts: Playfair Display (Serif for Headlines) and Inter (Sans for Body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Tailwind Config (Colors and Fonts) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-navy': '#0B2545',
+                        'accent-gold': '#F7C948',
+                        'secondary-teal': '#18A999',
+                        'off-white': '#F7F6F5',
+                        'text-dark': '#0B0B0B',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- JSON-LD Schema for LocalBusiness/Hotel -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Hotel",
+          "name": "Helipad Hotel & Restaurant",
+          "image": "https://your-domain.com/assets/helipad-hero.jpg",
+          "telephone": "+91-9876543210",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Mukti Para, Dhupguri More Bazar, opp. Falakata, Bhutnirghat",
+            "addressLocality": "Falakata",
+            "addressRegion": "West Bengal",
+            "postalCode": "735211",
+            "addressCountry": "IN"
+          },
+          "url": "https://your-domain.com",
+          "priceRange": "₹₹",
+          "openingHours": [
+            "Mo-Su 07:00-23:00"
+          ],
+          "sameAs": ["https://www.facebook.com/HelipadHotel","https://www.instagram.com/HelipadHotel"]
+        }
+    </script>
+
+    <style>
+        /* Base styles and fonts */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--off-white);
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Custom utility classes */
+        .btn-primary {
+            @apply inline-flex items-center justify-center px-8 py-3 text-lg font-semibold tracking-wide text-primary-navy bg-accent-gold rounded-xl shadow-lg transition duration-300 ease-in-out hover:bg-yellow-300 transform hover:scale-[1.02] active:scale-[0.98];
+        }
+
+        .btn-secondary {
+            @apply inline-flex items-center justify-center px-8 py-3 text-lg font-semibold tracking-wide border-2 border-accent-gold text-accent-gold bg-transparent rounded-xl transition duration-300 ease-in-out hover:bg-accent-gold/10;
+        }
+
+        .section-padding {
+            @apply py-16 md:py-24;
+        }
+
+        /* Hero Image/Overlay */
+        #hero-section {
+            background-image: url('https://placehold.co/1920x1080/0B2545/F7C948?text=Elegant+Hotel+Facade');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Sticky Header */
+        .sticky-header {
+            transition: transform 0.3s ease-in-out;
+            transform: translateY(0);
+        }
+        .header-hidden {
+            transform: translateY(-100%);
+        }
+        .nav-link {
+            @apply text-off-white hover:text-accent-gold transition duration-200 font-semibold text-lg py-2 px-3 rounded-lg;
+        }
+
+        /* Mobile FAB */
+        .fab-mobile {
+            @apply fixed bottom-4 right-4 z-50 p-4 rounded-full shadow-2xl transition duration-300 md:hidden;
+        }
+
+        /* Scroll Bar Style (Optional, for premium feel) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #F7C948;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background-color: #0B2545;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-text-dark bg-off-white">
+
+    <!-- Icon Library (for convenience) - Inline SVGs recommended for performance -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Sticky Header -->
+    <header id="main-header" class="sticky-header fixed top-0 left-0 right-0 z-40 bg-primary-navy shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex-shrink-0 flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-full bg-accent-gold flex items-center justify-center">
+                        <svg class="w-5 h-5 text-primary-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.5V19.5M4.5 12H19.5"/>
+                        </svg>
+                    </div>
+                    <span class="text-2xl font-serif text-off-white font-bold">Helipad</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex md:space-x-4 lg:space-x-8 items-center">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#rooms" class="nav-link">Rooms & Dining</a>
+                    <a href="#menu" class="nav-link">Menu</a>
+                    <a href="#gallery" class="nav-link">Gallery</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="tel:+919876543210" class="ml-4 p-2 rounded-full hover:bg-accent-gold/20 transition duration-200">
+                        <i data-lucide="phone" class="w-6 h-6 text-accent-gold"></i>
+                    </a>
+                    <button onclick="document.getElementById('reservation-modal').classList.remove('hidden')" class="btn-primary text-base px-5 py-2">Book Now</button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center space-x-3">
+                    <a href="tel:+919876543210" class="p-2 rounded-full hover:bg-accent-gold/20 transition duration-200">
+                        <i data-lucide="phone" class="w-6 h-6 text-accent-gold"></i>
+                    </a>
+                    <button id="mobile-menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-off-white hover:text-accent-gold hover:bg-primary-navy/70 focus:outline-none">
+                        <i data-lucide="menu" class="block h-7 w-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-primary-navy absolute w-full shadow-lg pb-4">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
+                <a href="#about" class="nav-link w-full text-center" onclick="closeMobileMenu()">About</a>
+                <a href="#rooms" class="nav-link w-full text-center" onclick="closeMobileMenu()">Rooms & Dining</a>
+                <a href="#menu" class="nav-link w-full text-center" onclick="closeMobileMenu()">Menu</a>
+                <a href="#gallery" class="nav-link w-full text-center" onclick="closeMobileMenu()">Gallery</a>
+                <a href="#contact" class="nav-link w-full text-center" onclick="closeMobileMenu()">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Floating Action Button (FAB) for Reservation -->
+    <button onclick="document.getElementById('reservation-modal').classList.remove('hidden')" class="fab-mobile bg-accent-gold text-primary-navy">
+        <i data-lucide="calendar-plus" class="w-7 h-7"></i>
+    </button>
+
+    <main class="mt-20">
+        <!-- 1. Hero Section -->
+        <section id="hero-section" class="relative min-h-[85vh] flex items-center justify-start text-off-white pt-20">
+            <!-- Overlay Gradient -->
+            <div class="absolute inset-0 bg-gradient-to-r from-primary-navy/80 to-transparent"></div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-32">
+                <h1 class="text-6xl md:text-8xl font-serif font-extrabold leading-tight tracking-tighter">
+                    Helipad
+                </h1>
+                <p class="mt-2 text-3xl md:text-5xl font-serif font-light tracking-wide">
+                    Hotel & Restaurant
+                </p>
+                <p class="mt-4 text-xl md:text-2xl font-semibold text-secondary-teal">
+                    Comfort · Cuisine · Convenience
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                    <button onclick="document.getElementById('reservation-modal').classList.remove('hidden')" class="btn-primary">
+                        Book a Table
+                    </button>
+                    <a href="#menu" class="btn-secondary">
+                        View Menu
+                    </a>
+                </div>
+
+                <!-- Quick Contact Chips -->
+                <div class="mt-12 flex flex-wrap gap-3">
+                    <a href="tel:+919876543210" class="flex items-center space-x-2 bg-primary-navy/70 border border-accent-gold/50 text-off-white py-2 px-4 rounded-full text-sm hover:bg-primary-navy/90">
+                        <i data-lucide="phone" class="w-4 h-4 text-accent-gold"></i>
+                        <span>+91 98765 43210</span>
+                    </a>
+                    <a href="https://wa.me/919876543210" target="_blank" class="flex items-center space-x-2 bg-primary-navy/70 border border-accent-gold/50 text-off-white py-2 px-4 rounded-full text-sm hover:bg-primary-navy/90">
+                        <i data-lucide="message-square" class="w-4 h-4 text-accent-gold"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Helipad+Hotel+Falakata" target="_blank" class="flex items-center space-x-2 bg-primary-navy/70 border border-accent-gold/50 text-off-white py-2 px-4 rounded-full text-sm hover:bg-primary-navy/90">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-accent-gold"></i>
+                        <span>Get Directions</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. About / Why Helipad -->
+        <section id="about" class="section-padding bg-off-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
+                    <div class="lg:col-span-6">
+                        <h2 class="text-4xl font-serif font-bold text-primary-navy mb-6 border-l-4 border-accent-gold pl-4">
+                            Your Boutique Hospitality Retreat
+                        </h2>
+                        <p class="text-xl leading-relaxed mb-4 text-text-dark/90">
+                            Nestled in Falakata, Helipad Hotel & Restaurant combines warm hospitality with carefully crafted cuisine — perfect for travelers and locals alike. We are dedicated to making every moment of your stay and dining experience exceptional.
+                        </p>
+                        <p class="text-lg leading-relaxed text-text-dark/70">
+                            Whether you need a peaceful night's rest after a journey or a vibrant, memorable dining experience, our commitment is to provide refinement that is always approachable and welcoming.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-6 mt-10 lg:mt-0">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                            <div class="p-6 bg-white rounded-xl shadow-xl transition hover:shadow-2xl">
+                                <i data-lucide="bed" class="w-10 h-10 mx-auto text-secondary-teal mb-3"></i>
+                                <h3 class="text-xl font-semibold text-primary-navy">Comfort</h3>
+                                <p class="text-sm text-text-dark/70 mt-1">Plush bedding & serene ambiance.</p>
+                            </div>
+                            <div class="p-6 bg-white rounded-xl shadow-xl transition hover:shadow-2xl">
+                                <i data-lucide="chef-hat" class="w-10 h-10 mx-auto text-secondary-teal mb-3"></i>
+                                <h3 class="text-xl font-semibold text-primary-navy">Cuisine</h3>
+                                <p class="text-sm text-text-dark/70 mt-1">Fresh, local ingredients, expertly prepared.</p>
+                            </div>
+                            <div class="p-6 bg-white rounded-xl shadow-xl transition hover:shadow-2xl">
+                                <i data-lucide="map-pin" class="w-10 h-10 mx-auto text-secondary-teal mb-3"></i>
+                                <h3 class="text-xl font-semibold text-primary-navy">Convenience</h3>
+                                <p class="text-sm text-text-dark/70 mt-1">Prime location near all key transport links.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Rooms & Dining Highlights -->
+        <section id="rooms" class="section-padding bg-primary-navy text-off-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-serif font-bold mb-12 text-center text-accent-gold">
+                    Signature Experiences
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Highlight Card 1: Room -->
+                    <div class="bg-primary-navy/80 rounded-xl overflow-hidden shadow-2xl group transition duration-300 transform hover:scale-[1.03]">
+                        <img loading="lazy" src="https://placehold.co/600x400/18A999/FFFFFF?text=Executive+Room" alt="Photo of a comfortable executive hotel room" class="w-full h-48 object-cover transition duration-500 group-hover:opacity-80" onerror="this.onerror=null;this.src='https://placehold.co/600x400/18A999/FFFFFF?text=Room+View';">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-serif font-semibold text-accent-gold">Executive Room</h3>
+                            <p class="text-sm text-off-white/70 mt-2">Spacious comfort with premium amenities. Ideal for business and leisure travelers.</p>
+                            <p class="mt-3 text-xl font-bold text-secondary-teal">₹3,500 / Night</p>
+                        </div>
+                    </div>
+
+                    <!-- Highlight Card 2: Food -->
+                    <div class="bg-primary-navy/80 rounded-xl overflow-hidden shadow-2xl group transition duration-300 transform hover:scale-[1.03]">
+                        <img loading="lazy" src="https://placehold.co/600x400/F7C948/0B2545?text=Chef's+Special+Thali" alt="Close-up photo of a decorated Chef's Special Thali" class="w-full h-48 object-cover transition duration-500 group-hover:opacity-80" onerror="this.onerror=null;this.src='https://placehold.co/600x400/F7C948/0B2545?text=Dish+View';">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-serif font-semibold text-accent-gold">Chef's Signature Thali</h3>
+                            <p class="text-sm text-off-white/70 mt-2">A curated selection of the best regional delicacies and international flavors.</p>
+                            <button onclick="document.getElementById('reservation-modal').classList.remove('hidden')" class="mt-3 text-secondary-teal font-semibold hover:text-accent-gold transition">Reserve Table →</button>
+                        </div>
+                    </div>
+
+                    <!-- Highlight Card 3: Room -->
+                    <div class="bg-primary-navy/80 rounded-xl overflow-hidden shadow-2xl group transition duration-300 transform hover:scale-[1.03]">
+                        <img loading="lazy" src="https://placehold.co/600x400/0B2545/18A999?text=Family+Suite" alt="Photo of a large, comfortable family suite" class="w-full h-48 object-cover transition duration-500 group-hover:opacity-80" onerror="this.onerror=null;this.src='https://placehold.co/600x400/0B2545/18A999?text=Suite+View';">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-serif font-semibold text-accent-gold">Luxury Family Suite</h3>
+                            <p class="text-sm text-off-white/70 mt-2">Two interconnected rooms with a shared lounge area for families and groups.</p>
+                            <p class="mt-3 text-xl font-bold text-secondary-teal">₹6,000 / Night</p>
+                        </div>
+                    </div>
+
+                    <!-- Highlight Card 4: Dining Ambiance -->
+                    <div class="bg-primary-navy/80 rounded-xl overflow-hidden shadow-2xl group transition duration-300 transform hover:scale-[1.03]">
+                        <img loading="lazy" src="https://placehold.co/600x400/18A999/0B2545?text=Fine+Dining+Setup" alt="Photo of an empty, elegant dining room with fine table settings" class="w-full h-48 object-cover transition duration-500 group-hover:opacity-80" onerror="this.onerror=null;this.src='https://placehold.co/600x400/18A999/0B2545?text=Dining+View';">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-serif font-semibold text-accent-gold">Refined Ambiance</h3>
+                            <p class="text-sm text-off-white/70 mt-2">Perfectly set mood for romantic dinners or professional lunch gatherings.</p>
+                            <button onclick="document.getElementById('reservation-modal').classList.remove('hidden')" class="mt-3 text-secondary-teal font-semibold hover:text-accent-gold transition">Reserve Table →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Menu Teaser -->
+        <section id="menu" class="section-padding bg-off-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-serif font-bold text-primary-navy mb-12 text-center">
+                    A Taste of Our Cuisine
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                    <!-- Starter 1 -->
+                    <div class="flex flex-col bg-white rounded-xl shadow-md p-4 transition hover:shadow-xl">
+                        <img loading="lazy" src="https://placehold.co/100x100/F7C948/0B2545?text=S1" alt="Placeholder image for Chicken Tikka" class="w-16 h-16 rounded-full object-cover mb-3">
+                        <h4 class="text-xl font-semibold text-primary-navy">Chicken Tikka</h4>
+                        <p class="text-sm text-text-dark/70">Marinated chicken, grilled to perfection.</p>
+                        <p class="mt-1 font-bold text-secondary-teal">₹250</p>
+                    </div>
+                    <!-- Starter 2 -->
+                    <div class="flex flex-col bg-white rounded-xl shadow-md p-4 transition hover:shadow-xl">
+                        <img loading="lazy" src="https://placehold.co/100x100/18A999/0B2545?text=S2" alt="Placeholder image for Paneer Chili" class="w-16 h-16 rounded-full object-cover mb-3">
+                        <h4 class="text-xl font-semibold text-primary-navy">Chili Paneer</h4>
+                        <p class="text-sm text-text-dark/70">Cottage cheese tossed in spicy sauce.</p>
+                        <p class="mt-1 font-bold text-secondary-teal">₹220</p>
+                    </div>
+                    <!-- Main 1 -->
+                    <div class="flex flex-col bg-white rounded-xl shadow-md p-4 transition hover:shadow-xl">
+                        <img loading="lazy" src="https://placehold.co/100x100/0B2545/F7C948?text=M1" alt="Placeholder image for Dal Makhani" class="w-16 h-16 rounded-full object-cover mb-3">
+                        <h4 class="text-xl font-semibold text-primary-navy">Dal Makhani</h4>
+                        <p class="text-sm text-text-dark/70">Slow-cooked black lentils in creamy sauce.</p>
+                        <p class="mt-1 font-bold text-secondary-teal">₹300</p>
+                    </div>
+                    <!-- Dessert 1 -->
+                    <div class="flex flex-col bg-white rounded-xl shadow-md p-4 transition hover:shadow-xl">
+                        <img loading="lazy" src="https://placehold.co/100x100/F7F6F5/0B0B0B?text=D1" alt="Placeholder image for Gajar Halwa" class="w-16 h-16 rounded-full object-cover mb-3">
+                        <h4 class="text-xl font-semibold text-primary-navy">Gajar Halwa</h4>
+                        <p class="text-sm text-text-dark/70">Classic carrot pudding with nuts.</p>
+                        <p class="mt-1 font-bold text-secondary-teal">₹150</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="https://your-domain.com/menu/full-menu.pdf" target="_blank" class="btn-primary">
+                        <i data-lucide="download" class="w-5 h-5 mr-2"></i>
+                        Download Full Menu (PDF)
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Gallery -->
+        <section id="gallery" class="section-padding bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-serif font-bold text-primary-navy mb-12 text-center">
+                    Visual Journeys
+                </h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-fr">
+                    <div class="col-span-1 row-span-2 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img loading="lazy" src="https://placehold.co/800x1200/0B2545/F7C948?text=Luxury+Lobby" alt="Hotel lobby with elegant furniture" class="w-full h-full object-cover cursor-pointer">
+                    </div>
+                    <div class="col-span-1 row-span-1 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img loading="lazy" src="https://placehold.co/800x600/18A999/0B2545?text=Food+Plating+Close+up" alt="Close-up of a perfectly plated dish" class="w-full h-full object-cover cursor-pointer">
+                    </div>
+                    <div class="col-span-2 row-span-1 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img loading="lazy" src="https://placehold.co/1600x600/F7C948/0B2545?text=Dining+Ambiance" alt="Wide shot of the restaurant dining area" class="w-full h-full object-cover cursor-pointer">
+                    </div>
+                    <div class="col-span-1 row-span-1 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img loading="lazy" src="https://placehold.co/800x600/0B2545/18A999?text=Modern+Bathroom" alt="Modern hotel bathroom with marble" class="w-full h-full object-cover cursor-pointer">
+                    </div>
+                    <div class="col-span-1 row-span-1 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                        <img loading="lazy" src="https://placehold.co/800x600/18A999/F7C948?text=Event+Setup" alt="Small event or conference room setup" class="w-full h-full object-cover cursor-pointer">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Reservation / Booking Section -->
+        <section id="reservation" class="section-padding bg-off-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-primary-navy text-off-white p-8 md:p-12 rounded-2xl shadow-2xl">
+                    <h2 class="text-4xl font-serif font-bold mb-3 text-accent-gold text-center">
+                        Reserve Your Experience
+                    </h2>
+                    <p class="text-center text-off-white/80 mb-8 text-lg">
+                        Secure your table in seconds — instant confirmation via WhatsApp or email (simulated via success modal).
+                    </p>
+
+                    <form id="reservation-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="res-name" class="block text-sm font-medium text-accent-gold mb-1">Full Name *</label>
+                                <input type="text" id="res-name" required class="w-full p-3 rounded-lg border border-primary-navy/50 bg-off-white text-text-dark focus:ring-accent-gold focus:border-accent-gold transition">
+                            </div>
+                            <div>
+                                <label for="res-phone" class="block text-sm font-medium text-accent-gold mb-1">Phone (for SMS/WhatsApp confirmation)</label>
+                                <input type="tel" id="res-phone" class="w-full p-3 rounded-lg border border-primary-navy/50 bg-off-white text-text-dark focus:ring-accent-gold focus:border-accent-gold transition" placeholder="+91 98765 43210">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                            <div class="col-span-2">
+                                <label for="res-date" class="block text-sm font-medium text-accent-gold mb-1">Date *</label>
+                                <input type="date" id="res-date" required class="w-full p-3 rounded-lg border border-primary-navy/50 bg-off-white text-text-dark focus:ring-accent-gold focus:border-accent-gold transition">
+                            </div>
+                            <div>
+                                <label for="res-time" class="block text-sm font-medium text-accent-gold mb-1">Time *</label>
+                                <input type="time" id="res-time" required class="w-full p-3 rounded-lg border border-primary-navy/50 bg-off-white text-text-dark focus:ring-accent-gold focus:border-accent-gold transition">
+                            </div>
+                            <div>
+                                <label for="res-guests" class="block text-sm font-medium text-accent-gold mb-1">Guests *</label>
+                                <input type="number" id="res-guests" required min="1" value="2" class="w-full p-3 rounded-lg border border-primary-navy/50 bg-off-white text-text-dark focus:ring-accent-gold focus:border-accent-gold transition">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="res-email" class="block text-sm font-medium text-accent-gold mb-1">Email (Optional)</label>
+                            <input type="email" id="res-email" class="w-full p-3 rounded-lg border border-primary-navy/50 bg-off-white text-text-dark focus:ring-accent-gold focus:border-accent-gold transition">
+                        </div>
+
+                        <div>
+                            <label for="res-request" class="block text-sm font-medium text-accent-gold mb-1">Special Request</label>
+                            <textarea id="res-request" rows="3" class="w-full p-3 rounded-lg border border-primary-navy/50 bg-off-white text-text-dark focus:ring-accent-gold focus:border-accent-gold transition"></textarea>
+                        </div>
+
+                        <button type="submit" id="res-submit-btn" class="btn-primary w-full mt-6 bg-secondary-teal text-off-white hover:bg-teal-600">
+                            <i data-lucide="check-circle" class="w-5 h-5 mr-2"></i>
+                            Confirm Reservation
+                        </button>
+                        <p id="res-message" class="text-center mt-4 text-sm font-medium hidden"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Reviews & Testimonials -->
+        <section id="reviews" class="section-padding bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-serif font-bold text-primary-navy mb-12 text-center">
+                    Guest Feedback
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-accent-gold">
+                        <i data-lucide="star" class="w-5 h-5 fill-accent-gold text-accent-gold inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-accent-gold text-accent-gold inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-accent-gold text-accent-gold inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-accent-gold text-accent-gold inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-accent-gold text-accent-gold inline-block"></i>
+                        <p class="italic text-text-dark/90 mt-3 leading-relaxed">"The rooms were impeccable and the staff's hospitality was truly five-star. A perfect staycation spot in Falakata."</p>
+                        <p class="mt-4 font-semibold text-primary-navy">— Anand K., Kolkata</p>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-secondary-teal">
+                        <i data-lucide="star" class="w-5 h-5 fill-accent-gold text-accent-gold inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-accent-gold text-accent-gold inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-accent-gold text-accent-gold inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-accent-gold text-accent-gold inline-block"></i>
+                        <i data-lucide="star-half" class="w-5 h-5 fill-accent-gold text-accent-gold inline-block"></i>
+                        <p class="italic text-text-dark/90 mt-3 leading-relaxed">"The restaurant food is the highlight! Fresh, authentic Bengali dishes with a modern presentation. Highly recommend the Thali."</p>
+                        <p class="mt-4 font-semibold text-primary-navy">— Priya M., Local Patron</p>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-accent-gold">
+                        <i data-lucide="star" class="w-5 h-5 fill-accent-gold text-accent-gold inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-accent-gold text-accent-gold inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-accent-gold text-accent-gold inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-accent-gold text-accent-gold inline-block"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-accent-gold text-accent-gold inline-block"></i>
+                        <p class="italic text-text-dark/90 mt-3 leading-relaxed">"Conveniently located and the check-in process was smooth. Fast internet and clean facilities—everything a traveler needs."</p>
+                        <p class="mt-4 font-semibold text-primary-navy">— David S., Business Traveler</p>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <p class="text-lg text-text-dark/80">Read more reviews on our official Google Business page.</p>
+                    <a href="#" target="_blank" class="text-secondary-teal font-semibold hover:text-accent-gold transition mt-2 inline-block">
+                        View All Google Reviews →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. FAQ (Accordion) -->
+        <section class="section-padding bg-off-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-serif font-bold text-primary-navy mb-12 text-center">
+                    Frequently Asked Questions
+                </h2>
+                <div id="faq-accordion" class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="border border-primary-navy/20 rounded-xl overflow-hidden shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center p-5 bg-white text-left font-semibold text-lg text-primary-navy hover:bg-gray-50 transition">
+                            <span>Is parking available at the hotel?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content p-5 pt-0 hidden text-text-dark/80 bg-off-white">
+                            <p>Yes, we offer complimentary on-site parking for all our registered hotel guests and restaurant patrons. The parking area is secured 24/7.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 2 -->
+                    <div class="border border-primary-navy/20 rounded-xl overflow-hidden shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center p-5 bg-white text-left font-semibold text-lg text-primary-navy hover:bg-gray-50 transition">
+                            <span>What is your room booking and cancellation policy?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content p-5 pt-0 hidden text-text-dark/80 bg-off-white">
+                            <p>We require a $50 deposit to secure a room booking. Cancellations made 48 hours before check-in receive a full refund. Cancellations after that period may incur a one-night charge.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 3 -->
+                    <div class="border border-primary-navy/20 rounded-xl overflow-hidden shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center p-5 bg-white text-left font-semibold text-lg text-primary-navy hover:bg-gray-50 transition">
+                            <span>Do you have options for children and large groups?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content p-5 pt-0 hidden text-text-dark/80 bg-off-white">
+                            <p>We offer interconnected Family Suites and can arrange extra beds upon request. For restaurant reservations exceeding 10 guests, please call us directly for dedicated seating arrangements.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 4 -->
+                    <div class="border border-primary-navy/20 rounded-xl overflow-hidden shadow-md">
+                        <button class="faq-toggle w-full flex justify-between items-center p-5 bg-white text-left font-semibold text-lg text-primary-navy hover:bg-gray-50 transition">
+                            <span>What payment methods are accepted?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 transform transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content p-5 pt-0 hidden text-text-dark/80 bg-off-white">
+                            <p>We accept all major credit/debit cards (Visa, MasterCard, Amex), UPI, and cash payments at both the hotel and the restaurant.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Map & Contact -->
+        <section id="contact" class="section-padding bg-primary-navy text-off-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-serif font-bold mb-12 text-accent-gold text-center">
+                    Find Us
+                </h2>
+                <div class="grid lg:grid-cols-2 gap-10 items-center">
+                    <!-- Contact Details -->
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-serif font-bold text-off-white">Contact Information</h3>
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-secondary-teal mt-1 flex-shrink-0"></i>
+                            <div>
+                                <p class="font-semibold text-accent-gold">Address</p>
+                                <p>Mukti Para, Dhupguri More Bazar, opp. Falakata, Bhutnirghat, Falakata, West Bengal 735211</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="phone" class="w-6 h-6 text-secondary-teal mt-1 flex-shrink-0"></i>
+                            <div>
+                                <p class="font-semibold text-accent-gold">Phone</p>
+                                <a href="tel:+919876543210" class="hover:text-secondary-teal transition">+91 98765 43210</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="mail" class="w-6 h-6 text-secondary-teal mt-1 flex-shrink-0"></i>
+                            <div>
+                                <p class="font-semibold text-accent-gold">Email</p>
+                                <a href="mailto:info@helipadhospitality.in" class="hover:text-secondary-teal transition">info@helipadhospitality.in</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="clock" class="w-6 h-6 text-secondary-teal mt-1 flex-shrink-0"></i>
+                            <div>
+                                <p class="font-semibold text-accent-gold">Operating Hours</p>
+                                <p>Open Daily: 7:00 AM – 11:00 PM</p>
+                            </div>
+                        </div>
+                        <!-- Social Links -->
+                        <div class="flex space-x-4 pt-4">
+                            <a href="#" target="_blank" class="text-off-white hover:text-accent-gold transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                            <a href="#" target="_blank" class="text-off-white hover:text-accent-gold transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                            <a href="#" target="_blank" class="text-off-white hover:text-accent-gold transition"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Google Maps Embed -->
+                    <div class="w-full h-80 rounded-xl overflow-hidden shadow-2xl">
+                        <!-- Using an embed map URL centered on Falakata, near the specified address -->
+                        <iframe
+                            loading="lazy"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11409.73410313337!2d89.1673841!3d26.545624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4m5!3e2!4m2!1s0x39e33433604b3a1d%3A0xc0688688467b7e3!2sMukti%20Para%2C%20Dhupguri%20More%20Bazar%2C%20Falakata%2C%20West%20Bengal%20735211!5e0!3m2!1sen!2sin!4v1633512461000!5m2!1sen!2sin"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            aria-hidden="false"
+                            tabindex="0"
+                            title="Helipad Hotel & Restaurant Location Map">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 11. Footer -->
+    <footer class="bg-text-dark text-off-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-b border-primary-navy/50 pb-8">
+                <div>
+                    <h5 class="text-xl font-serif font-bold text-accent-gold mb-4">Helipad</h5>
+                    <p class="text-sm text-off-white/70">Comfort · Cuisine · Convenience</p>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Quick Links</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#about" class="hover:text-accent-gold transition">About Us</a></li>
+                        <li><a href="#menu" class="hover:text-accent-gold transition">View Menu</a></li>
+                        <li><a href="#contact" class="hover:text-accent-gold transition">Directions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Legal</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-accent-gold transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-accent-gold transition">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-accent-gold transition">Cookie Notice</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col items-start">
+                    <h5 class="font-semibold mb-4">Reserve Now</h5>
+                    <button onclick="document.getElementById('reservation-modal').classList.remove('hidden')" class="btn-primary px-6 py-2 text-base">Book a Table</button>
+                </div>
+            </div>
+            <div class="mt-8 flex flex-col md:flex-row justify-between items-center text-sm text-off-white/50">
+                <p>&copy; 2024 Helipad Hotel & Restaurant. All rights reserved.</p>
+                <p class="mt-4 md:mt-0">Developed with hospitality in mind.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Reservation Success Modal -->
+    <div id="reservation-modal" class="hidden fixed inset-0 z-50 bg-primary-navy/80 backdrop-blur-sm flex items-center justify-center p-4" onclick="if(event.target.id === 'reservation-modal') document.getElementById('reservation-modal').classList.add('hidden')">
+        <div id="modal-content" class="bg-off-white p-8 rounded-2xl shadow-2xl max-w-lg w-full transform transition-all duration-300 scale-95 opacity-0">
+            <div class="flex justify-end">
+                <button onclick="document.getElementById('reservation-modal').classList.add('hidden')" class="text-primary-navy hover:text-secondary-teal">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div class="text-center py-4">
+                <i data-lucide="check-circle" class="w-16 h-16 mx-auto text-secondary-teal mb-4"></i>
+                <h3 class="text-3xl font-serif font-bold text-primary-navy mb-2">Reservation Confirmed!</h3>
+                <p class="text-lg text-text-dark/80">Thank you for choosing Helipad. We have recorded your reservation request.</p>
+                <p id="modal-details" class="mt-4 p-3 bg-gray-100 rounded-lg text-sm text-left font-mono"></p>
+                <p class="mt-4 text-sm text-text-dark/60">A confirmation (simulated via this success message) will be sent to your phone/email shortly. We look forward to seeing you!</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JavaScript Section: Firebase, UI, and Logic -->
+    <script type="module">
+        // Firebase Imports
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, collection, addDoc, onSnapshot, query, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // --- GLOBAL VARIABLES AND INITIALIZATION ---
+        let db, auth, userId = null;
+        let isAuthReady = false;
+
+        // Mandatorily required Canvas variables
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-helipad-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : { /* Mock Config */ };
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        // Set log level for debugging Firebase
+        setLogLevel('Debug');
+
+        const app = initializeApp(firebaseConfig);
+        auth = getAuth(app);
+        db = getFirestore(app);
+
+        // UI Elements
+        const form = document.getElementById('reservation-form');
+        const submitBtn = document.getElementById('res-submit-btn');
+        const messageBox = document.getElementById('res-message');
+        const modal = document.getElementById('reservation-modal');
+        const modalContent = document.getElementById('modal-content');
+        const modalDetails = document.getElementById('modal-details');
+
+        /**
+         * Initializes Firebase authentication (mandatory).
+         */
+        async function initAuth() {
+            try {
+                if (initialAuthToken) {
+                    await signInWithCustomToken(auth, initialAuthToken);
+                } else {
+                    await signInAnonymously(auth);
+                }
+                onAuthStateChanged(auth, (user) => {
+                    if (user) {
+                        userId = user.uid;
+                        console.log("Firebase initialized. User ID:", userId);
+                    } else {
+                        // For unauthenticated users, use a random ID (only happens if initialAuthToken is missing/invalid)
+                        userId = 'anon-' + crypto.randomUUID();
+                        console.log("Signed in anonymously. User ID:", userId);
+                    }
+                    isAuthReady = true;
+                    // Run logic dependent on auth state
+                    checkExistingReservations();
+                });
+            } catch (error) {
+                console.error("Firebase Auth Error:", error);
+                userId = 'error-anon-' + crypto.randomUUID();
+                isAuthReady = true;
+                checkExistingReservations();
+            }
+        }
+
+        /**
+         * Saves a new reservation document to Firestore.
+         * Path: /artifacts/{appId}/users/{userId}/reservations/{docId}
+         * @param {Object} data - The reservation data object.
+         */
+        async function saveReservation(data) {
+            if (!isAuthReady || !userId) {
+                console.error("Authentication not ready. Cannot save data.");
+                return { success: false, error: "Authentication not ready." };
+            }
+
+            try {
+                const reservationsPath = `artifacts/${appId}/users/${userId}/reservations`;
+                const reservationsCollection = collection(db, reservationsPath);
+                
+                // Add the new document
+                const docRef = await addDoc(reservationsCollection, {
+                    ...data,
+                    timestamp: new Date().toISOString(),
+                });
+
+                console.log("Reservation successfully added with ID: ", docRef.id);
+                return { success: true, id: docRef.id };
+            } catch (e) {
+                console.error("Error adding document: ", e);
+                return { success: false, error: e.message };
+            }
+        }
+
+        /**
+         * Simulates checking for existing reservations (e.g., to populate a user dashboard, not fully displayed here).
+         * This uses onSnapshot for real-time updates.
+         */
+        function checkExistingReservations() {
+             if (!isAuthReady || !userId) return;
+
+             try {
+                const reservationsPath = `artifacts/${appId}/users/${userId}/reservations`;
+                const reservationsCollection = collection(db, reservationsPath);
+                const q = query(reservationsCollection);
+
+                onSnapshot(q, (snapshot) => {
+                    let reservationCount = 0;
+                    snapshot.forEach((doc) => {
+                        // console.log("Existing reservation:", doc.data());
+                        reservationCount++;
+                    });
+                    console.log(`Real-time listener active. Total reservations found: ${reservationCount}`);
+                    // UI could be updated here (e.g., 'You have X upcoming bookings')
+                });
+             } catch (e) {
+                 console.error("Error setting up reservation listener:", e);
+             }
+        }
+
+        // --- FORM SUBMISSION HANDLER ---
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i data-lucide="loader" class="w-5 h-5 mr-2 animate-spin"></i> Processing...';
+            messageBox.classList.add('hidden');
+
+            const reservationData = {
+                name: document.getElementById('res-name').value.trim(),
+                phone: document.getElementById('res-phone').value.trim(),
+                email: document.getElementById('res-email').value.trim(),
+                date: document.getElementById('res-date').value,
+                time: document.getElementById('res-time').value,
+                guests: parseInt(document.getElementById('res-guests').value, 10),
+                request: document.getElementById('res-request').value.trim(),
+            };
+
+            const result = await saveReservation(reservationData);
+
+            if (result.success) {
+                // Success: Show confirmation modal
+                modalDetails.innerHTML = `
+                    Name: ${reservationData.name}<br>
+                    Date/Time: ${reservationData.date} at ${reservationData.time}<br>
+                    Guests: ${reservationData.guests}<br>
+                    Reference ID: ${result.id}
+                `;
+
+                // Reset form and show modal
+                form.reset();
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+                modal.classList.remove('hidden');
+
+            } else {
+                // Failure: Show error message
+                messageBox.classList.remove('hidden');
+                messageBox.classList.add('text-red-500');
+                messageBox.textContent = `Reservation failed: ${result.error || 'Please try again.'}`;
+            }
+
+            // Reset button state
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i data-lucide="check-circle" class="w-5 h-5 mr-2"></i> Confirm Reservation';
+            lucide.createIcons(); // Re-render icon on button
+        });
+
+
+        // --- UI AND UX LOGIC ---
+
+        // 1. Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenu = () => mobileMenu.classList.add('hidden');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 2. Sticky Header Logic (Show on scroll up)
+        let lastScrollTop = 0;
+        const header = document.getElementById('main-header');
+
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop && currentScroll > 200) {
+                // Scrolling Down (and passed the hero section)
+                header.classList.add('header-hidden');
+            } else {
+                // Scrolling Up or Near Top
+                header.classList.remove('header-hidden');
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        }, false);
+
+        // 3. FAQ Accordion Logic
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+
+                // Close all other open items
+                document.querySelectorAll('.faq-content').forEach(item => {
+                    if (item !== content && !item.classList.contains('hidden')) {
+                         item.classList.add('hidden');
+                         item.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+                    }
+                });
+
+                // Toggle the clicked item
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // 4. Initialization on Load
+        window.onload = function() {
+            lucide.createIcons(); // Initialize Lucide Icons
+            initAuth(); // Initialize Firebase Auth
+
+            // Set default date to today for convenience
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('res-date').setAttribute('min', today);
+            document.getElementById('res-date').value = today;
+        };
+
+        // Re-render icons after dynamic content update (like modal open)
+        modal.addEventListener('click', (event) => {
+            if (event.target.id === 'reservation-modal' || event.target.closest('button')?.textContent.includes('x')) {
+                modalContent.classList.add('scale-95', 'opacity-0');
+            }
+        });
+
+    </script>
+</body>
+</html>
